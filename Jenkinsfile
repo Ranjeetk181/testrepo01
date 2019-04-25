@@ -1,4 +1,5 @@
 pipeline {
+    agent 'any'
     stages {
         stage('Deliver for development') {
             when {
