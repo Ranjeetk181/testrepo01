@@ -1,23 +1,16 @@
 pipeline {
     agent 'any'
     stages {
-        stage('Deliver for development') {
-            when {
-                branch 'dev'
-            }
+        stage('Testing') {
             steps {
-                sh 'echo "this is dev branch"'
+                sh 'echo "YOu can write test cases here"'
                
             }
         }
-        stage('Deploy for production') {
-            when {
-                branch 'master'
-            }
+        stage('Deployment') {
             steps {
-                sh 'echo "thsi is master branch"'
-                sh 'echo "testing multiple steps"'
-            }
+                sh 'echo "YOu can write deployment steps here."'
+                }
         }
     }
 }
