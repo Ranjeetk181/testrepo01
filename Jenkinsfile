@@ -1,21 +1,21 @@
 pipeline {
     agent 'any'
     parameters {
-        string(name: 'environmnt', defaultValue: 'xyz', description: 'define the enviroment')
+        string(name: 'ENVIRON', defaultValue: 'xyz', description: 'define the enviroment')
     }
     environment {
-        MY_ENV = "mytesting"
+        MY_ENV = 'mytesting'
     }
     stages {
         stage('Testing') {
             steps {
-                sh 'echo "YOu can write ${params.environmnt} cases here"'
+                echo "YOu can write ${params.ENVIRON} cases here"
                
             }
         }
         stage('Deployment') {
             steps {
-                sh 'echo "YOu can write deployment steps for ${env.MY_ENV}."'
+                echo "YOu can write deployment steps for ${env.MY_ENV}."
                 }
         }
     }
