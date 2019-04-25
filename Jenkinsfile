@@ -1,7 +1,7 @@
 pipeline {
     agent 'any'
     parameters {
-        string(name: 'ENVIRON', defaultValue: 'xyz', description: 'define the enviroment')
+        string(name: 'ENVIRON', description: 'define the enviroment')
     }
     environment {
         MY_ENV = 'mytesting'
