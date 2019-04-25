@@ -7,7 +7,7 @@ pipeline {
             }
             steps {
                 sh 'echo "this is dev branch"'
-                sh 'echo "testing multiple steps"'
+               
             }
         }
         stage('Deploy for production') {
@@ -16,6 +16,7 @@ pipeline {
             }
             steps {
                 sh 'echo "thsi is master branch"'
+                sh 'echo "testing multiple steps"'
             }
         }
     }
