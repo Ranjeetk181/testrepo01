@@ -1,21 +1,23 @@
 pipeline {
     agent 'any'
     stages {
-        stage('Deliver for development') {
-            when {
-                branch 'dev'
-            }
+        stage('Testing') {
             steps {
-                sh 'echo "this is dev branch"'
+                sh 'echo "YOu can write test cases here"'
+               
             }
         }
-        stage('Deploy for production') {
-            when {
-                branch 'master'
-            }
+        stage("Unit-testing") {
             steps {
-                sh 'echo "thsi is master branch"'
-            }
+                parallel (
+                    "firstTask" : {
+                     sh 'echo "First unit test"'
+                    },
+                    "secondTask" : {
+                    sh 'echo "Second unit test"'
+                    }
+                    )
+             }
         }
     }
 }
